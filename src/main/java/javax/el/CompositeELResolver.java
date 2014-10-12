@@ -15,11 +15,12 @@
  *******************************************************************************/
 package javax.el;
 
-import java.beans.FeatureDescriptor;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+
+import br.com.anteros.core.metadata.beans.FeatureDescriptor;
 
 /**
  * Maintains an ordered composite list of child ELResolvers. Though only a single ELResolver is

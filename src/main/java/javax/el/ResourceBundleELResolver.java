@@ -15,11 +15,13 @@
  *******************************************************************************/
 package javax.el;
 
-import java.beans.FeatureDescriptor;
+
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
+
+import br.com.anteros.core.metadata.beans.FeatureDescriptor;
 
 /**
  * Defines property resolution behavior on instances of java.util.ResourceBundle. This resolver

@@ -15,8 +15,6 @@
  *******************************************************************************/
 package br.com.anteros.el.misc;
 
-import java.beans.PropertyEditor;
-import java.beans.PropertyEditorManager;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
@@ -279,28 +277,29 @@ public class TypeConverterImpl implements TypeConverter {
 	}
 
 	protected Object coerceStringToType(String value, Class<?> type) {
-		PropertyEditor editor = PropertyEditorManager.findEditor(type);
-		if (editor == null) {
-			if ("".equals(value)) {
-				return null;
-			}
-			throw new ELException(LocalMessages.get("error.coerce.type", value, String.class, type));
-		} else {
-			if ("".equals(value)) {
-				try {
-					editor.setAsText(value);
-				} catch (IllegalArgumentException e) {
-					return null;
-				}
-			} else {
-				try {
-					editor.setAsText(value);
-				} catch (IllegalArgumentException e) {
-					throw new ELException(LocalMessages.get("error.coerce.value", value, value.getClass(), type));
-				}
-			}
-			return editor.getValue();
-		}
+		throw new RuntimeException("Método não implementado. Verificar PropertyEditorManager.");
+//		PropertyEditor editor = PropertyEditorManager.findEditor(type);
+//		if (editor == null) {
+//			if ("".equals(value)) {
+//				return null;
+//			}
+//			throw new ELException(LocalMessages.get("error.coerce.type", value, String.class, type));
+//		} else {
+//			if ("".equals(value)) {
+//				try {
+//					editor.setAsText(value);
+//				} catch (IllegalArgumentException e) {
+//					return null;
+//				}
+//			} else {
+//				try {
+//					editor.setAsText(value);
+//				} catch (IllegalArgumentException e) {
+//					throw new ELException(LocalMessages.get("error.coerce.value", value, value.getClass(), type));
+//				}
+//			}
+//			return editor.getValue();
+//		}
 	}
 
 	@SuppressWarnings("unchecked")

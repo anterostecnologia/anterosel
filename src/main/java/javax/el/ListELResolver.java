@@ -15,9 +15,10 @@
  *******************************************************************************/
 package javax.el;
 
-import java.beans.FeatureDescriptor;
 import java.util.Iterator;
 import java.util.List;
+
+import br.com.anteros.core.metadata.beans.FeatureDescriptor;
 
 /**
  * Defines property resolution behavior on instances of java.util.List. This resolver handles base

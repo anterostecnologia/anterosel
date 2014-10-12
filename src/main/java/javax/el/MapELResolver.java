@@ -15,9 +15,11 @@
  *******************************************************************************/
 package javax.el;
 
-import java.beans.FeatureDescriptor;
+
 import java.util.Iterator;
 import java.util.Map;
+
+import br.com.anteros.core.metadata.beans.FeatureDescriptor;
 
 /**
  * Defines property resolution behavior on instances of java.util.Map. This resolver handles base

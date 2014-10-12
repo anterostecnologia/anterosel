@@ -15,8 +15,11 @@
  *******************************************************************************/
 package javax.el;
 
-import java.beans.FeatureDescriptor;
+
+
 import java.util.Iterator;
+
+import br.com.anteros.core.metadata.beans.FeatureDescriptor;
 
 /**
  * Enables customization of variable and property resolution behavior for EL expression evaluation.

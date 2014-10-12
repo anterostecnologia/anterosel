@@ -15,9 +15,11 @@
  *******************************************************************************/
 package javax.el;
 
-import java.beans.FeatureDescriptor;
+
 import java.lang.reflect.Array;
 import java.util.Iterator;
+
+import br.com.anteros.core.metadata.beans.FeatureDescriptor;
 
 /**
  * Defines property resolution behavior on arrays. This resolver handles base objects that are Java

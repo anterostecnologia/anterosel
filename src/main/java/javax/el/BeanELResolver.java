@@ -15,10 +15,7 @@
  *******************************************************************************/
 package javax.el;
 
-import java.beans.FeatureDescriptor;
-import java.beans.IntrospectionException;
-import java.beans.Introspector;
-import java.beans.PropertyDescriptor;
+
 import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -28,6 +25,11 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import br.com.anteros.core.metadata.beans.FeatureDescriptor;
+import br.com.anteros.core.metadata.beans.IntrospectionException;
+import br.com.anteros.core.metadata.beans.Introspector;
+import br.com.anteros.core.metadata.beans.PropertyDescriptor;
 
 /**
  * Defines property resolution behavior on objects using the JavaBeans component architecture. This
