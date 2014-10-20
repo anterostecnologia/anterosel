@@ -16,6 +16,7 @@
 package br.com.anteros.el.util;
 
 
+import java.beans.FeatureDescriptor;
 import java.util.Iterator;
 
 import javax.el.ArrayELResolver;
@@ -26,8 +27,6 @@ import javax.el.ELResolver;
 import javax.el.ListELResolver;
 import javax.el.MapELResolver;
 import javax.el.ResourceBundleELResolver;
-
-import br.com.anteros.core.metadata.beans.FeatureDescriptor;
 
 /**
  * Simple resolver implementation. This resolver handles root properties (top-level identifiers).
