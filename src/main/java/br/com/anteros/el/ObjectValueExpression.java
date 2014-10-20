@@ -15,9 +15,8 @@
  *******************************************************************************/
 package br.com.anteros.el;
 
-import javax.el.ELContext;
-import javax.el.ELException;
-
+import br.com.anteros.el.api.ELContext;
+import br.com.anteros.el.api.ELException;
 import br.com.anteros.el.misc.LocalMessages;
 import br.com.anteros.el.misc.TypeConverter;
 
@@ -26,7 +25,7 @@ import br.com.anteros.el.misc.TypeConverter;
  *
  * @author Christoph Beck
  */
-public final class ObjectValueExpression extends javax.el.ValueExpression {
+public final class ObjectValueExpression extends br.com.anteros.el.api.ValueExpression {
 	private static final long serialVersionUID = 1L;
 
 	private final TypeConverter converter;

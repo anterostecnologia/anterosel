@@ -18,13 +18,12 @@ package br.com.anteros.el.tree.impl;
 import java.io.PrintWriter;
 import java.util.EnumSet;
 
-import javax.el.ELContext;
-import javax.el.ELException;
-import javax.el.ELResolver;
-import javax.el.ExpressionFactory;
-import javax.el.FunctionMapper;
-import javax.el.VariableMapper;
-
+import br.com.anteros.el.api.ELContext;
+import br.com.anteros.el.api.ELException;
+import br.com.anteros.el.api.ELResolver;
+import br.com.anteros.el.api.ExpressionFactory;
+import br.com.anteros.el.api.FunctionMapper;
+import br.com.anteros.el.api.VariableMapper;
 import br.com.anteros.el.tree.Bindings;
 import br.com.anteros.el.tree.NodePrinter;
 import br.com.anteros.el.tree.Tree;

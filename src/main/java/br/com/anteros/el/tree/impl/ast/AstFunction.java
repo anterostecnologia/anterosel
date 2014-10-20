@@ -19,9 +19,8 @@ import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import javax.el.ELContext;
-import javax.el.ELException;
-
+import br.com.anteros.el.api.ELContext;
+import br.com.anteros.el.api.ELException;
 import br.com.anteros.el.misc.LocalMessages;
 import br.com.anteros.el.tree.Bindings;
 import br.com.anteros.el.tree.FunctionNode;

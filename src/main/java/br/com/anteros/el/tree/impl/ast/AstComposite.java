@@ -17,8 +17,7 @@ package br.com.anteros.el.tree.impl.ast;
 
 import java.util.List;
 
-import javax.el.ELContext;
-
+import br.com.anteros.el.api.ELContext;
 import br.com.anteros.el.tree.Bindings;
 
 public class AstComposite extends AstRightValue {

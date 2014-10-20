@@ -23,10 +23,9 @@ import java.lang.reflect.Constructor;
 import java.util.EnumSet;
 import java.util.Properties;
 
-import javax.el.ELContext;
-import javax.el.ELException;
-import javax.el.ExpressionFactory;
-
+import br.com.anteros.el.api.ELContext;
+import br.com.anteros.el.api.ELException;
+import br.com.anteros.el.api.ExpressionFactory;
 import br.com.anteros.el.misc.TypeConverter;
 import br.com.anteros.el.tree.TreeBuilder;
 import br.com.anteros.el.tree.TreeStore;
@@ -75,7 +74,7 @@ import br.com.anteros.el.tree.impl.Builder.Feature;
  * 
  * @author Christoph Beck
  */
-public class ExpressionFactoryImpl extends javax.el.ExpressionFactory {
+public class ExpressionFactoryImpl extends br.com.anteros.el.api.ExpressionFactory {
 	/**
 	 * A profile provides a default set of language features that will define the builder's
 	 * behavior. A profile can be adjusted using the <code>javax.el.methodInvocations</code>,

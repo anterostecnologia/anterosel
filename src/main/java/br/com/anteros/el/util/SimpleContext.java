@@ -20,11 +20,11 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.el.ELContext;
-import javax.el.ELResolver;
-import javax.el.FunctionMapper;
-import javax.el.ValueExpression;
-import javax.el.VariableMapper;
+import br.com.anteros.el.api.ELContext;
+import br.com.anteros.el.api.ELResolver;
+import br.com.anteros.el.api.FunctionMapper;
+import br.com.anteros.el.api.ValueExpression;
+import br.com.anteros.el.api.VariableMapper;
 
 /**
  * Simple context implementation.

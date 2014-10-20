@@ -18,8 +18,7 @@ package br.com.anteros.el.tree.impl.ast;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
-import javax.el.ELContext;
-
+import br.com.anteros.el.api.ELContext;
 import br.com.anteros.el.tree.Bindings;
 import br.com.anteros.el.tree.ExpressionNode;
 

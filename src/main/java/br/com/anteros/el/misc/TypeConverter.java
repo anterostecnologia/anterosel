@@ -17,7 +17,7 @@ package br.com.anteros.el.misc;
 
 import java.io.Serializable;
 
-import javax.el.ELException;
+import br.com.anteros.el.api.ELException;
 
 public interface TypeConverter extends Serializable {
 	/**

@@ -15,8 +15,7 @@
  *******************************************************************************/
 package br.com.anteros.el.tree;
 
-import javax.el.ELException;
-
+import br.com.anteros.el.api.ELException;
 import br.com.anteros.el.misc.LocalMessages;
 
 /**

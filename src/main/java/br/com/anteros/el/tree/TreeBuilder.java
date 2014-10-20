@@ -17,7 +17,7 @@ package br.com.anteros.el.tree;
 
 import java.io.Serializable;
 
-import javax.el.ELException;
+import br.com.anteros.el.api.ELException;
 
 /**
  * Tree builder interface.

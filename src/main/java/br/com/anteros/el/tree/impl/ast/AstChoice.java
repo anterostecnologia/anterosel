@@ -15,9 +15,8 @@
  *******************************************************************************/
 package br.com.anteros.el.tree.impl.ast;
 
-import javax.el.ELContext;
-import javax.el.ELException;
-
+import br.com.anteros.el.api.ELContext;
+import br.com.anteros.el.api.ELException;
 import br.com.anteros.el.tree.Bindings;
 
 public class AstChoice extends AstRightValue {

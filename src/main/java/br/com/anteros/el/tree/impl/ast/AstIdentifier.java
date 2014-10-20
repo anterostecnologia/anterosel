@@ -19,15 +19,14 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
-import javax.el.ELContext;
-import javax.el.ELException;
-import javax.el.MethodExpression;
-import javax.el.MethodInfo;
-import javax.el.MethodNotFoundException;
-import javax.el.PropertyNotFoundException;
-import javax.el.ValueExpression;
-import javax.el.ValueReference;
-
+import br.com.anteros.el.api.ELContext;
+import br.com.anteros.el.api.ELException;
+import br.com.anteros.el.api.MethodExpression;
+import br.com.anteros.el.api.MethodInfo;
+import br.com.anteros.el.api.MethodNotFoundException;
+import br.com.anteros.el.api.PropertyNotFoundException;
+import br.com.anteros.el.api.ValueExpression;
+import br.com.anteros.el.api.ValueReference;
 import br.com.anteros.el.misc.LocalMessages;
 import br.com.anteros.el.tree.Bindings;
 import br.com.anteros.el.tree.IdentifierNode;

@@ -18,11 +18,10 @@ package br.com.anteros.el.tree;
 import java.lang.reflect.Method;
 import java.util.List;
 
-import javax.el.ELException;
-import javax.el.FunctionMapper;
-import javax.el.ValueExpression;
-import javax.el.VariableMapper;
-
+import br.com.anteros.el.api.ELException;
+import br.com.anteros.el.api.FunctionMapper;
+import br.com.anteros.el.api.ValueExpression;
+import br.com.anteros.el.api.VariableMapper;
 import br.com.anteros.el.misc.LocalMessages;
 import br.com.anteros.el.misc.TypeConverter;
 

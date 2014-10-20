@@ -15,11 +15,10 @@
  *******************************************************************************/
 package br.com.anteros.el.tree.impl.ast;
 
-import javax.el.ELContext;
-import javax.el.ELException;
-import javax.el.MethodInfo;
-import javax.el.ValueReference;
-
+import br.com.anteros.el.api.ELContext;
+import br.com.anteros.el.api.ELException;
+import br.com.anteros.el.api.MethodInfo;
+import br.com.anteros.el.api.ValueReference;
 import br.com.anteros.el.misc.LocalMessages;
 import br.com.anteros.el.tree.Bindings;
 

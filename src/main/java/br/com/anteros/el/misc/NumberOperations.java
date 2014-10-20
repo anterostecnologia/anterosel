@@ -18,7 +18,7 @@ package br.com.anteros.el.misc;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-import javax.el.ELException;
+import br.com.anteros.el.api.ELException;
 
 /**
  * Arithmetic Operations as specified in chapter 1.7.

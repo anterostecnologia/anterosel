@@ -16,16 +16,16 @@
 package br.com.anteros.el.util;
 
 
-import java.beans.FeatureDescriptor;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import javax.el.ELContext;
-import javax.el.ELResolver;
-import javax.el.PropertyNotFoundException;
-import javax.el.PropertyNotWritableException;
+import br.com.anteros.core.metadata.beans.FeatureDescriptor;
+import br.com.anteros.el.api.ELContext;
+import br.com.anteros.el.api.ELResolver;
+import br.com.anteros.el.api.PropertyNotFoundException;
+import br.com.anteros.el.api.PropertyNotWritableException;
 
 /**
  * Simple root property resolver implementation. This resolver handles root properties (i.e.

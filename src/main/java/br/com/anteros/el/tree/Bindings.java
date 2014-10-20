@@ -22,9 +22,8 @@ import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
-import javax.el.ELException;
-import javax.el.ValueExpression;
-
+import br.com.anteros.el.api.ELException;
+import br.com.anteros.el.api.ValueExpression;
 import br.com.anteros.el.misc.TypeConverter;
 
 /**

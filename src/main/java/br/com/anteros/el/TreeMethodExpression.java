@@ -20,12 +20,11 @@ import java.io.ObjectInputStream;
 import java.io.PrintWriter;
 import java.util.Arrays;
 
-import javax.el.ELContext;
-import javax.el.ELException;
-import javax.el.FunctionMapper;
-import javax.el.MethodInfo;
-import javax.el.VariableMapper;
-
+import br.com.anteros.el.api.ELContext;
+import br.com.anteros.el.api.ELException;
+import br.com.anteros.el.api.FunctionMapper;
+import br.com.anteros.el.api.MethodInfo;
+import br.com.anteros.el.api.VariableMapper;
 import br.com.anteros.el.misc.LocalMessages;
 import br.com.anteros.el.misc.TypeConverter;
 import br.com.anteros.el.tree.Bindings;
@@ -43,7 +42,7 @@ import br.com.anteros.el.tree.TreeStore;
  * 
  * @author Christoph Beck
  */
-public final class TreeMethodExpression extends javax.el.MethodExpression {
+public final class TreeMethodExpression extends br.com.anteros.el.api.MethodExpression {
 	private static final long serialVersionUID = 1L;
 
 	private final TreeBuilder builder;

@@ -16,17 +16,17 @@
 package br.com.anteros.el.util;
 
 
-import java.beans.FeatureDescriptor;
 import java.util.Iterator;
 
-import javax.el.ArrayELResolver;
-import javax.el.BeanELResolver;
-import javax.el.CompositeELResolver;
-import javax.el.ELContext;
-import javax.el.ELResolver;
-import javax.el.ListELResolver;
-import javax.el.MapELResolver;
-import javax.el.ResourceBundleELResolver;
+import br.com.anteros.core.metadata.beans.FeatureDescriptor;
+import br.com.anteros.el.api.ArrayELResolver;
+import br.com.anteros.el.api.BeanELResolver;
+import br.com.anteros.el.api.CompositeELResolver;
+import br.com.anteros.el.api.ELContext;
+import br.com.anteros.el.api.ELResolver;
+import br.com.anteros.el.api.ListELResolver;
+import br.com.anteros.el.api.MapELResolver;
+import br.com.anteros.el.api.ResourceBundleELResolver;
 
 /**
  * Simple resolver implementation. This resolver handles root properties (top-level identifiers).
