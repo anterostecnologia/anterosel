@@ -17,20 +17,23 @@ package br.com.anteros.el.misc;
 
 import java.text.MessageFormat;
 import java.util.MissingResourceException;
-import java.util.ResourceBundle;
+
+import br.com.anteros.core.resource.messages.AnterosBundle;
+import br.com.anteros.core.resource.messages.AnterosResourceBundle;
+import br.com.anteros.el.resource.messages.AnterosELMessages;
 
 public final class LocalMessages {
-	private static final String BUNDLE_NAME = "META-INF/anterosel_messages.properties";
-	private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
+	private static final String BUNDLE_NAME = "ANTEROS_EL";
+	private static AnterosBundle MESSAGES = AnterosResourceBundle.getBundle(BUNDLE_NAME,AnterosELMessages.class);
 
 	public static String get(String key, Object... args) {
 		String template = null;
 		try {
-			template = RESOURCE_BUNDLE.getString(key);
+			template = MESSAGES.getMessage(key);
 		} catch (MissingResourceException e) {
 			StringBuilder b = new StringBuilder();
 			try {
-				b.append(RESOURCE_BUNDLE.getString("message.unknown"));
+				b.append(MESSAGES.getMessage("message.unknown"));
 				b.append(": ");
 			} catch (MissingResourceException e2) {}
 			b.append(key);

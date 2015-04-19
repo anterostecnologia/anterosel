@@ -19,30 +19,30 @@ package br.com.anteros.el.api;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.MissingResourceException;
-import java.util.ResourceBundle;
 
 import br.com.anteros.core.metadata.beans.FeatureDescriptor;
+import br.com.anteros.core.resource.messages.AnterosBundle;
 
 /**
- * Defines property resolution behavior on instances of java.util.ResourceBundle. This resolver
- * handles base objects of type java.util.ResourceBundle. It accepts any object as a property and
- * coerces it to a java.lang.String for invoking java.util.ResourceBundle.getObject(String). This
+ * Defines property resolution behavior on instances of AnterosBundle. This resolver
+ * handles base objects of type AnterosBundle. It accepts any object as a property and
+ * coerces it to a java.lang.String for invoking AnterosBundle.getObject(String). This
  * resolver is read only and will throw a {@link PropertyNotWritableException} if setValue is
  * called. ELResolvers are combined together using {@link CompositeELResolver}s, to define rich
  * semantics for evaluating an expression. See the javadocs for {@link ELResolver} for details.
  */
-public class ResourceBundleELResolver extends ELResolver {
+public class AnterosBundleELResolver extends ELResolver {
 	/**
-	 * If the base object is a ResourceBundle, returns the most general type that this resolver
+	 * If the base object is a AnterosBundle, returns the most general type that this resolver
 	 * accepts for the property argument. Otherwise, returns null. Assuming the base is a
-	 * ResourceBundle, this method will always return String.class.
+	 * AnterosBundle, this method will always return String.class.
 	 * 
 	 * @param context
 	 *            The context of this evaluation.
 	 * @param base
-	 *            The bundle to analyze. Only bases of type ResourceBundle are handled by this
+	 *            The bundle to analyze. Only bases of type AnterosBundle are handled by this
 	 *            resolver.
-	 * @return null if base is not a ResourceBundle; otherwise String.class.
+	 * @return null if base is not a AnterosBundle; otherwise String.class.
 	 */
 	@Override
 	public Class<?> getCommonPropertyType(ELContext context, Object base) {
@@ -50,10 +50,10 @@ public class ResourceBundleELResolver extends ELResolver {
 	}
 
 	/**
-	 * If the base object is a ResourceBundle, returns an Iterator containing the set of keys
-	 * available in the ResourceBundle. Otherwise, returns null. The Iterator returned must contain
+	 * If the base object is a AnterosBundle, returns an Iterator containing the set of keys
+	 * available in the AnterosBundle. Otherwise, returns null. The Iterator returned must contain
 	 * zero or more instances of java.beans.FeatureDescriptor. Each info object contains information
-	 * about a key in the ResourceBundle, and is initialized as follows:
+	 * about a key in the AnterosBundle, and is initialized as follows:
 	 * <ul>
 	 * <li>displayName - The String key name</li>
 	 * <li>name - Same as displayName property</li>
@@ -71,16 +71,16 @@ public class ResourceBundleELResolver extends ELResolver {
 	 * @param context
 	 *            The context of this evaluation.
 	 * @param base
-	 *            The bundle to analyze. Only bases of type ResourceBundle are handled by this
+	 *            The bundle to analyze. Only bases of type AnterosBundle are handled by this
 	 *            resolver.
 	 * @return An Iterator containing zero or more (possibly infinitely more) FeatureDescriptor
 	 *         objects, each representing a key in this bundle, or null if the base object is not a
-	 *         ResourceBundle.
+	 *         AnterosBundle.
 	 */
 	@Override
 	public Iterator<FeatureDescriptor> getFeatureDescriptors(ELContext context, Object base) {
 		if (isResolvable(base)) {
-			final Enumeration<String> keys = ((ResourceBundle) base).getKeys();
+			final Enumeration<String> keys = ((AnterosBundle) base).getKeys();
 			return new Iterator<FeatureDescriptor>() {
 				public boolean hasNext() {
 					return keys.hasMoreElements();
@@ -107,15 +107,15 @@ public class ResourceBundleELResolver extends ELResolver {
 	}
 
 	/**
-	 * If the base object is an instance of ResourceBundle, return null, since the resolver is read
-	 * only. If the base is ResourceBundle, the propertyResolved property of the ELContext object
+	 * If the base object is an instance of AnterosBundle, return null, since the resolver is read
+	 * only. If the base is AnterosBundle, the propertyResolved property of the ELContext object
 	 * must be set to true by this resolver, before returning. If this property is not true after
 	 * this method is called, the caller should ignore the return value.
 	 * 
 	 * @param context
 	 *            The context of this evaluation.
 	 * @param base
-	 *            The bundle to analyze. Only bases of type ResourceBundle are handled by this
+	 *            The bundle to analyze. Only bases of type AnterosBundle are handled by this
 	 *            resolver.
 	 * @param property
 	 *            The name of the property to analyze.
@@ -136,22 +136,22 @@ public class ResourceBundleELResolver extends ELResolver {
 	}
 
 	/**
-	 * If the base object is an instance of ResourceBundle, the provided property will first be
-	 * coerced to a String. The Object returned by getObject on the base ResourceBundle will be
-	 * returned. If the base is ResourceBundle, the propertyResolved property of the ELContext
+	 * If the base object is an instance of AnterosBundle, the provided property will first be
+	 * coerced to a String. The Object returned by getObject on the base AnterosBundle will be
+	 * returned. If the base is AnterosBundle, the propertyResolved property of the ELContext
 	 * object must be set to true by this resolver, before returning. If this property is not true
 	 * after this method is called, the caller should ignore the return value.
 	 * 
 	 * @param context
 	 *            The context of this evaluation.
 	 * @param base
-	 *            The bundle to analyze. Only bases of type ResourceBundle are handled by this
+	 *            The bundle to analyze. Only bases of type AnterosBundle are handled by this
 	 *            resolver.
 	 * @param property
 	 *            The name of the property to analyze. Will be coerced to a String.
 	 * @return If the propertyResolved property of ELContext was set to true, then null if property
 	 *         is null; otherwise the Object for the given key (property coerced to String) from the
-	 *         ResourceBundle. If no object for the given key can be found, then the String "???" +
+	 *         AnterosBundle. If no object for the given key can be found, then the String "???" +
 	 *         key + "???".
 	 * @throws NullPointerException
 	 *             if context is null.
@@ -169,7 +169,7 @@ public class ResourceBundleELResolver extends ELResolver {
 		if (isResolvable(base)) {
 			if (property != null) {
 				try {
-					result = ((ResourceBundle) base).getObject(property.toString());
+					result = ((AnterosBundle) base).getMessage(property.toString());
 				} catch (MissingResourceException e) {
 					result = "???" + property + "???";
 				}
@@ -180,7 +180,7 @@ public class ResourceBundleELResolver extends ELResolver {
 	}
 
 	/**
-	 * If the base object is not null and an instanceof java.util.ResourceBundle, return true.
+	 * If the base object is not null and an instanceof AnterosBundle, return true.
 	 * 
 	 * @return If the propertyResolved property of ELContext was set to true, then true; otherwise
 	 *         undefined.
@@ -199,12 +199,12 @@ public class ResourceBundleELResolver extends ELResolver {
 	}
 
 	/**
-	 * If the base object is a ResourceBundle, throw a {@link PropertyNotWritableException}.
+	 * If the base object is a AnterosBundle, throw a {@link PropertyNotWritableException}.
 	 * 
 	 * @param context
 	 *            The context of this evaluation.
 	 * @param base
-	 *            The bundle to analyze. Only bases of type ResourceBundle are handled by this
+	 *            The bundle to analyze. Only bases of type AnterosBundle are handled by this
 	 *            resolver.
 	 * @param property
 	 *            The name of the property to analyze. Will be coerced to a String.
@@ -213,7 +213,7 @@ public class ResourceBundleELResolver extends ELResolver {
 	 * @throws NullPointerException
 	 *             if context is null.
 	 * @throws PropertyNotWritableException
-	 *             Always thrown if base is an instance of ResourceBundle.
+	 *             Always thrown if base is an instance of AnterosBundle.
 	 */
 	@Override
 	public void setValue(ELContext context, Object base, Object property, Object value) {
@@ -232,9 +232,9 @@ public class ResourceBundleELResolver extends ELResolver {
 	 *            The bean to analyze.
 	 * @param property
 	 *            The name of the property to analyze. Will be coerced to a String.
-	 * @return base instanceof ResourceBundle
+	 * @return base instanceof AnterosBundle
 	 */
 	private final boolean isResolvable(Object base) {
-		return base instanceof ResourceBundle;
+		return base instanceof AnterosBundle;
 	}
 }

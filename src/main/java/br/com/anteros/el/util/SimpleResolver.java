@@ -26,7 +26,7 @@ import br.com.anteros.el.api.ELContext;
 import br.com.anteros.el.api.ELResolver;
 import br.com.anteros.el.api.ListELResolver;
 import br.com.anteros.el.api.MapELResolver;
-import br.com.anteros.el.api.ResourceBundleELResolver;
+import br.com.anteros.el.api.AnterosBundleELResolver;
 
 /**
  * Simple resolver implementation. This resolver handles root properties (top-level identifiers).
@@ -41,7 +41,7 @@ public class SimpleResolver extends ELResolver {
 			add(new ArrayELResolver(true));
 			add(new ListELResolver(true));
 			add(new MapELResolver(true));
-			add(new ResourceBundleELResolver());
+			add(new AnterosBundleELResolver());
 			add(new BeanELResolver(true));
 		}
 	};
@@ -50,7 +50,7 @@ public class SimpleResolver extends ELResolver {
 			add(new ArrayELResolver(false));
 			add(new ListELResolver(false));
 			add(new MapELResolver(false));
-			add(new ResourceBundleELResolver());
+			add(new AnterosBundleELResolver());
 			add(new BeanELResolver(false));
 		}
 	};
