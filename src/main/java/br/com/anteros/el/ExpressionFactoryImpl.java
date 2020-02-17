@@ -260,7 +260,14 @@ public class ExpressionFactoryImpl extends br.com.anteros.el.api.ExpressionFacto
 				InputStream input = null;
 				try {
 					properties.load(input = new FileInputStream(file));
+					input.close();
 				} catch (IOException e) {
+					if (input !=null) {
+						try {
+							input.close();
+						} catch (IOException e1) {
+						}
+					}
 					throw new ELException("Cannot read default EL properties", e);
 				} finally {
 					try {
@@ -284,28 +291,18 @@ public class ExpressionFactoryImpl extends br.com.anteros.el.api.ExpressionFacto
 
 	private Properties loadProperties(String path) {
 		Properties properties = new Properties(loadDefaultProperties());
-
-		// try to find and load properties
-		InputStream input = null;
 		try {
-			input = Thread.currentThread().getContextClassLoader().getResourceAsStream(path);
-		} catch (SecurityException e) {
-			input = ClassLoader.getSystemResourceAsStream(path);
-		}
-		if (input != null) {
+			InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream(path);
+			properties.load(input);
+			input.close();
+		} catch (Exception e) {
 			try {
+				InputStream input = ClassLoader.getSystemResourceAsStream(path);
 				properties.load(input);
-			} catch (IOException e) {
-				throw new ELException("Cannot read EL properties", e);
-			} finally {
-				try {
-					input.close();
-				} catch (IOException e) {
-					// ignore...
-				}
+				input.close();
+			} catch (IOException e1) {
 			}
 		}
-
 		return properties;
 	}
 
