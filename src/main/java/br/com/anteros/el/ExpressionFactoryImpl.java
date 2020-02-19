@@ -34,7 +34,7 @@ import br.com.anteros.el.tree.impl.Cache;
 import br.com.anteros.el.tree.impl.Builder.Feature;
 
 /**
- * Expression factory implementation.
+ * Expression factory implementation. 
  * 
  * This class is also used as an EL "service provider". The <em>juel-spi</em> jar file specifies this
  * class as el expression factory implementation in

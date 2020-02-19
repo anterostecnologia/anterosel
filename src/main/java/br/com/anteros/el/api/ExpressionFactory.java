@@ -24,6 +24,8 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Constructor;
 import java.util.Properties;
 
+import br.com.anteros.el.ExpressionFactoryImpl;
+
 /**
  * Parses a String into a {@link ValueExpression} or {@link MethodExpression} instance for later
  * evaluation. Classes that implement the EL expression language expose their functionality via this
@@ -86,7 +88,7 @@ public abstract class ExpressionFactory {
 	 *             if a factory class cannot be found or instantiation fails.
 	 */
 	public static ExpressionFactory newInstance() {
-		return newInstance(null);
+		return newInstance(new Properties());
 	}
 
 	/**
@@ -178,6 +180,7 @@ public abstract class ExpressionFactory {
 
 		if (className == null || className.trim().length() == 0) {
 			className = "br.com.anteros.el.ExpressionFactoryImpl";
+						 
 		}
 
 		return newInstance(properties, className, classLoader);
@@ -201,7 +204,8 @@ public abstract class ExpressionFactory {
 	private static ExpressionFactory newInstance(Properties properties, String className, ClassLoader classLoader) {
 		Class<?> clazz = null;
 		try {
-			clazz = classLoader.loadClass(className.trim());
+			ExpressionFactoryImpl cl = new ExpressionFactoryImpl(properties);
+			clazz = classLoader.loadClass(className.trim()); 
 			if (!ExpressionFactory.class.isAssignableFrom(clazz)) {
 				throw new ELException("Invalid expression factory class: " + clazz.getName());
 			}
